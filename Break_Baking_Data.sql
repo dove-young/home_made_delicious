@@ -177,7 +177,6 @@ DROP TABLE IF EXISTS `bread_baking_data`.`yeast_steps` ;
 CREATE  TABLE IF NOT EXISTS `bread_baking_data`.`yeast_steps` (
   `yeast_step_id` INT NOT NULL ,
   `step_name` SMALLINT NULL ,
-  `time` TIME NULL ,
   PRIMARY KEY (`yeast_step_id`) )
 ENGINE = InnoDB;
 
