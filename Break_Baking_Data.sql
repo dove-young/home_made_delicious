@@ -73,7 +73,6 @@ CREATE  TABLE IF NOT EXISTS `bread_baking_data`.`sourdough_recipe` (
   `sourdough_type_id` INT NULL ,
   `recipe_material_id` INT NOT NULL ,
   `sourdough_recipe_name` VARCHAR(45) NULL ,
-  `date` DATE NULL ,
   `natural_yeast_type_id` INT NULL ,
   PRIMARY KEY (`sourdough_recipe_id`) ,
   UNIQUE INDEX `sourdogn_recipe_id_UNIQUE` (`sourdough_recipe_id` ASC) ,
@@ -236,7 +235,6 @@ CREATE  TABLE IF NOT EXISTS `bread_baking_data`.`dough_recipe` (
   `dough_recipe_id` INT NOT NULL ,
   `recipe_material_id` INT NULL ,
   `dough_recipe_name` VARCHAR(45) NULL ,
-  `date` VARCHAR(45) NULL ,
   `loaf_type_id` INT NULL ,
   `sourdough_recipe_id` INT NULL ,
   PRIMARY KEY (`dough_recipe_id`) ,
@@ -267,13 +265,13 @@ ENGINE = InnoDB;
 DROP TABLE IF EXISTS `bread_baking_data`.`dough_ferment_record` ;
 
 CREATE  TABLE IF NOT EXISTS `bread_baking_data`.`dough_ferment_record` (
-  `dough_ferment_steps_id` INT NOT NULL ,
+  `dough_ferment_record_id` INT NOT NULL ,
   `dough_recipe_id` INT NULL ,
   `ferment_step_id` INT NULL ,
   `date` DATE NULL ,
   `time` TIME NULL ,
   `temporature` SMALLINT NULL ,
-  PRIMARY KEY (`dough_ferment_steps_id`) ,
+  PRIMARY KEY (`dough_ferment_record_id`) ,
   INDEX `fk_dough_ferment_record_dough_recipe2_idx` (`dough_recipe_id` ASC) ,
   INDEX `fk_dough_ferment_record_recipe_steps1_idx` (`ferment_step_id` ASC) ,
   CONSTRAINT `fk_dough_ferment_record_dough_recipe2`
